@@ -1,0 +1,223 @@
+:root {
+    /* PrimaryColors */
+    --deep-purple: #6a398c;
+    --vivid-purple: #804595;
+    --modern-lilac: #9c539c;
+    --bold-mauve: #c967a2;
+    --lavender-pink: #d876a9;
+
+    /* SecondaryColors */
+    --midnight-base: #14142B;
+    --twilight-deep: #24263A;
+
+    /* font */
+    --snow-white: #FFFAFA;
+}
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    background-color: var(--twilight-deep);
+}
+
+.title {
+    /* font-size: 32px; */
+    font-size: 26px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--snow-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-weight: 800;
+    margin: 65px 0 18px 0;
+    text-transform: uppercase;
+    color: var(--snow-white);
+    text-align: center;
+}
+
+.conditions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+@media (min-width: 768px) {
+    .conditions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card-condition {
+        width: calc(50% - 20px);
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-condition {
+        width: calc(25% - 20px);
+    }
+}
+
+.card-condition {
+    background-color: var(--midnight-base);
+    max-width: 300px;
+    text-align: center;
+    padding: 16px;
+    color: var(--snow-white);
+    border-radius: 8px;
+
+    border-top: 3px solid var(--lavender-pink);
+
+    box-shadow: 10px 10px 20px -15px rgba(8, 8, 8, 1);
+    -webkit-box-shadow: 10px 10px 20px -15px rgba(8, 8, 8, 1);
+    -moz-box-shadow: 10px 10px 20px -15px rgba(8, 8, 8, 1);
+}
+
+.card-condition-title {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card-condition-subtitle {
+    text-transform: uppercase;
+}
+
+.card-condition-description {
+    font-weight: 300;
+}
+
+.btn-open {
+    border: none;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    width: 100%;
+    font-weight: 800;
+    cursor: pointer;
+    background-color: var(--deep-purple);
+    color: var(--snow-white);
+    border-radius: 4px;
+}
+
+.btn-open:hover {
+    filter: brightness(95%);
+    -webkit-filter: brightness(95%);
+    color: white;
+}
+
+.modal {
+    display: none;
+    max-width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 8px;
+
+    background-color: var(--snow-white);
+    color: var(--deep-purple);
+
+    text-align: center;
+
+    box-shadow: 10px 10px 20px -15px rgba(8, 8, 8, 1);
+    -webkit-box-shadow: 10px 10px 20px -15px rgba(8, 8, 8, 1);
+    -moz-box-shadow: 10px 10px 20px -15px rgba(8, 8, 8, 1);
+}
+
+.activarModal {
+    display: block;
+}
+
+.modal-titulo {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.modal-mensaje {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--lavender-pink);
+    text-transform: uppercase;
+}
+
+.modal-datos {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid var(--deep-purple);
+    color: var(--deep-purple);
+    outline: none;
+
+}
+
+.modal-datos:focus {
+    box-shadow: 0 0 2px var(--deep-purple);
+}
+
+.modal-datos::placeholder {
+    color: var(--deep-purple);
+}
+
+.btn-modal-verificar {
+    width: 100%;
+    margin-top: 12px;
+    border: solid 1px var(--deep-purple);
+    padding: 8px;
+    border-radius: 4px;
+    background-color: transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--midnight-base);
+}
+
+.btn-modal-verificar:hover {
+    background-color: var(--deep-purple);
+    color: var(--snow-white);
+}
+
+.btn-modal-cerrar {
+    width: 100%;
+    border: solid 1px var(--deep-purple);
+    padding: 8px;
+    border-radius: 4px;
+    background-color: transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--midnight-base);
+}
+
+.btn-modal-cerrar:hover {
+    background-color: var(--deep-purple);
+    color: var(--snow-white);
+}
+
+.activarModal {
+    display: block;
+}

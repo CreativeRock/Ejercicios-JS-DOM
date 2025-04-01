@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHD1 | DOM</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1 class="title">Ejercicios JavaScript</h1>
+
+        <section>
+            <h2 class="section-title ">Condicionales</h2>
+            <div class="conditions">
+                <div class="card-condition">
+                    <h2 id="titleCondition" class="card-condition-title">Condicionales</h2>
+                    <h3 id="conditionTitle" class="card-condition-subtitle">Verificar si un número es par o impar</h3>
+                    <p id="description" class="card-condition-description">
+                        Permite al usuario ingresar un número y determina si es par o impar, mostrando el resultado.
+                    </p>
+                    <button id="btnParImpar" class="btn-open">Abrir</button>
+                </div>
+
+                <div class="card-condition">
+                    <h2 id="titleCondition" class="card-condition-title">Condicionales</h2>
+                    <h3 id="conditionTitle" class="card-condition-subtitle">Verifica si el usuario es mayor o menor de
+                        edad</h3>
+                    <p id="description" class="card-condition-description">
+                        Permite al usuario ingresar su edad y determina si es Mayor o menor de edad.
+                    </p>
+                    <button id="btnMayorEdad" class="btn-open">Abrir</button>
+                </div>
+
+                <div class="card-condition">
+                    <h2 id="titleCondition" class="card-condition-title">Condicionales</h2>
+                    <h3 id="conditionTitle" class="card-condition-subtitle">Verifica si el usuario Aprobo/reprobo su
+                        curso</h3>
+                    <p id="description" class="card-condition-description">
+                        Permite al usuario ingresar su nota final y determina si ah aprobado o reprobado su curso.
+                    </p>
+                    <button id="btnCalificacion" class="btn-open">Abrir</button>
+                </div>
+
+                <div class="card-condition">
+                    <h2 id="titleCondition" class="card-condition-title">Condicionales</h2>
+                    <h3 id="conditionTitle" class="card-condition-subtitle">Verifica los tragos bebidos por el usuario
+                    </h3>
+                    <p id="description" class="card-condition-description">
+                        Permite al usuario ingresar la cantidad de tragos que ha bebido y comprueba si es apto para
+                        conducir.
+                    </p>
+                    <button id="btnTragos" class="btn-open">Abrir</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Bucles</h2>
+            <div class="conditions">
+                <div class="card-condition">
+                    <h2 id="titleCondition">Bucles</h2>
+                    <h3 id="conditionTitle">Número Par o Impar</h3>
+                    <p id="description">Comprobara si el número ingresado PAR o IMPAR</p>
+                    <button id="btn" class="btn-open">Abrir</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <h2 id="tituloModal" class="modal-titulo">Titulo modal</h2>
+        <p id="ejercicioModal" class="modal-ejercicio">descripcion modal</p>
+        <input type="text" id="respuesta" class="modal-datos" placeholder="Ingrese el dato solicitado">
+        <button id="verificar" class="btn-modal-verificar">Verificar</button>
+        <p id="mensaje" class="modal-mensaje">respuesta modal</p>
+        <button id="cerrar" class="btn-modal-cerrar">Cerrar</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
