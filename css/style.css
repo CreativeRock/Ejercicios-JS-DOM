@@ -14,7 +14,6 @@
     --snow-white: #FFFAFA;
 }
 
-
 html {
     box-sizing: border-box;
 }
@@ -175,6 +174,15 @@ body {
     color: var(--deep-purple);
     outline: none;
 
+}
+
+.modal-numeros {
+    display: none;
+    margin: 16px 0;
+}
+
+.modal-numeros .modal-datos {
+    margin-top: 8px;
 }
 
 .modal-datos:focus {
