@@ -70,11 +70,33 @@
             <div class="conditions">
                 <div class="card-condition">
                     <h2 id="titleCondition">Bucles</h2>
-                    <h3 id="conditionTitle">Número Par o Impar</h3>
-                    <p id="description">Comprobara si el número ingresado PAR o IMPAR</p>
-                    <button id="btn" class="btn-open">Abrir</button>
+                    <h3 id="conditionTitle">Tablas de multiplicación</h3>
+                    <p id="description">Permite al usuario ingresar un número el cual mostrata la tabla de mutiplicar
+                        del numero el limite es 10</p>
+                    <button id="btnTablaMultiplicar" class="btn-open">Abrir</button>
                 </div>
 
+                <div class="card-condition">
+                    <h2 id="titleCondition">Bucles</h2>
+                    <h3 id="conditionTitle">Años cumplidos</h3>
+                    <p id="description">Permite al usuario ingresar su edad se le devolvera los años cumplidos</p>
+                    <button id="btnAniosCumplidos" class="btn-open">Abrir</button>
+                </div>
+
+                <div class="card-condition">
+                    <h2 id="titleCondition">Bucles</h2>
+                    <h3 id="conditionTitle">Listado de Números</h3>
+                    <p id="description">Permite al usuario ingresar un número, se le devolvera una lista de números</p>
+                    <button id="btnListaNumeros" class="btn-open">Abrir</button>
+                </div>
+
+                <div class="card-condition">
+                    <h2 id="titleCondition">Bucles</h2>
+                    <h3 id="conditionTitle">Calculadora</h3>
+                    <p id="description">Permite al usuario ingresar una letra segun las opciones disponibles
+                    </p>
+                    <button id="btnCalculadora" class="btn-open">Abrir</button>
+                </div>
             </div>
         </section>
     </main>
@@ -83,6 +105,13 @@
         <h2 id="tituloModal" class="modal-titulo">Titulo modal</h2>
         <p id="ejercicioModal" class="modal-ejercicio">descripcion modal</p>
         <input type="text" id="respuesta" class="modal-datos" placeholder="Ingrese el dato solicitado">
+
+        <div id="modalNumeros" class="modal-numeros">
+            <input type="number" id="inputNum1" class="modal-datos" placeholder="Ingresa el primer número"></input>
+            <input type="number" id="inputNum2" class="modal-datos" placeholder="Ingresa el segundo número"></input>
+        </div>
+
+
         <button id="verificar" class="btn-modal-verificar">Verificar</button>
         <p id="mensaje" class="modal-mensaje">respuesta modal</p>
         <button id="cerrar" class="btn-modal-cerrar">Cerrar</button>

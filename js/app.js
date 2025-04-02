@@ -6,6 +6,10 @@ const respuesta = document.getElementById("respuesta");
 const btnVerificar = document.getElementById("verificar");
 const mensaje = document.getElementById("mensaje");
 const btnCerrar = document.getElementById("cerrar");
+const inputNum1 = document.getElementById("inputNum1");
+const inputNum2 = document.getElementById("inputNum2");
+const modalNumeros = document.getElementById("modalNumeros");
+
 
 //btn Condicionales
 const btnParImpar = document.getElementById("btnParImpar");
@@ -13,20 +17,36 @@ const btnMayorEdad = document.getElementById("btnMayorEdad");
 const btnCalificacion = document.getElementById("btnCalificacion");
 const btnbtnTragos = document.getElementById("btnTragos");
 
+//Bucles
+const btnTablaMultiplicar = document.getElementById("btnTablaMultiplicar");
+const btnAniosCumplidos = document.getElementById("btnAniosCumplidos");
+const btnListaNumeros = document.getElementById("btnListaNumeros");
+const btnCalculadora = document.getElementById("btnCalculadora");
+
 btnParImpar.addEventListener("click", function () {
     abrirModal('Verificar si un número es par o impar', 'Permite al usuario ingresar un número y determina si es par o impar, mostrando el resultado.', verificarParImpar)
 });
-
 btnMayorEdad.addEventListener("click", function () {
     abrirModal('Verifica si el usuario es mayor o menor de edad', 'Permite al usuario ingresar su edad y determina si es Mayor o menor de edad.', verificarMayorEdad)
 });
-
 btnCalificacion.addEventListener("click", function () {
     abrirModal('Verifica si el usuario Aprobo/reprobo su curso', 'Permite al usuario ingresar su nota final y determina si ah aprobado o reprobado su curso.', aprobadoReprobado)
 });
-
 btnbtnTragos.addEventListener("click", function () {
     abrirModal('Verifica los tragos bebidos por el usuario', 'Permite al usuario ingresar la cantidad de tragos que ha bebido y comprueba si es apto para conducir.', tragosBebidos)
+});
+
+btnTablaMultiplicar.addEventListener("click", function () {
+    abrirModal('Muestra la tabla de multiplicar', 'Permite al usuario ingresar un número el cual mostrata la tabla de mutiplicar del numero el limite es 10', tablaMultiplicar);
+});
+btnAniosCumplidos.addEventListener("click", function () {
+    abrirModal('Años cumplidos', 'Permite al usuario ingresar su edad se le devolvera los años cumplidos', aniosCumplidos)
+});
+btnListaNumeros.addEventListener("click", function () {
+    abrirModal('Lista de números', 'Permite al usuario un número se le devolvera una lista de números', listaNumeros)
+});
+btnCalculadora.addEventListener("click", function () {
+    abrirModal('Calculadora', 'Seleccione una opcion, puede elegir entre S, R, M, D, donde \n S = Suma, \n R = Resta, \n M = Multiplicación ,\n D = División', calculadora)
 });
 
 let funcionEjercicioActual = null;
@@ -39,6 +59,7 @@ function abrirModal(titulo, descripcion, funcionEjercicio) {
 
     funcionEjercicioActual = funcionEjercicio;
 
+    modalNumeros.style.display = "none";
     modal.classList.add("activarModal");
 }
 
@@ -91,6 +112,102 @@ function tragosBebidos() {
     }
 }
 
+/* Ejercicio 01 bucle TABLAS DE MULTIPLICAR */
+function tablaMultiplicar() {
+    let limit = 10;
+    let base = parseInt(respuesta.value);
+
+    if (isNaN(base) || base <= 0) {
+        mensaje.textContent = `${base} Ingresa un número válido`
+    } else {
+        let resultado = '';
+        for (let i = 1; i <= limit; i++) {
+            resultado += (`${i} * ${base} = ${i * base}<br>`);
+        }
+        mensaje.innerHTML = resultado;
+    }
+}
+
+/* Ejercicio 02 bucle EDAD CUMPLIDA */
+function aniosCumplidos() {
+    let anios = parseInt(respuesta.value)
+
+    if (isNaN(anios) || anios <= 0) {
+        mensaje.textContent = `${anios} Ingresa un número válido y mayor que 0`
+    } else {
+        let aniosRespuesta = '';
+        for (let i = 0; i <= anios; i++) {
+            aniosRespuesta += (`Has cumplido ${i} años<br>`);
+        }
+        mensaje.innerHTML = aniosRespuesta;
+    }
+}
+
+/* Ejercicio 03 bucle LISTA-NUMEROS */
+function listaNumeros(params) {
+    let lista = parseInt(respuesta.value)
+
+    if (isNaN(lista) && lista <= 0) {
+        mensaje.textContent = `${anios} Ingresa un número válido y mayor que 0`
+    } else {
+        let listaRespuesta = '';
+        for (let i = 1; i <= lista; i++) {
+            listaRespuesta += (`Número: ${i}<br>`)
+        }
+        mensaje.innerHTML = listaRespuesta;
+    }
+}
+/* Ejercicio 03 bucle LISTA-NUMEROS */
+function calculadora() {
+    let operacion = respuesta.value.toLowerCase();
+    let num1Valor = parseFloat(inputNum1.value);
+    let num2Valor = parseFloat(inputNum2.value);
+    let respuestaOperacion;
+
+    switch (operacion) {
+
+        case 's':
+            mensaje.textContent = 'Ha seleccionado la operación SUMA';
+            respuestaOperacion = suma(num1Valor, num2Valor);
+            modalNumeros.style.display = "block";
+            break;
+        case 'r':
+            mensaje.textContent = 'Ha seleccionado la operación RESTA';
+            respuestaOperacion = resta(num1Valor, num2Valor);
+            modalNumeros.style.display = "block";
+            break;
+        case 'm':
+            mensaje.textContent = 'Ha seleccionado la operación MULTIPLICACIÓN';
+            respuestaOperacion = multiplicacion(num1Valor, num2Valor)
+            modalNumeros.style.display = "block";
+            break;
+        case 'd':
+            respuestaOperacion = mensaje.textContent = 'Ha seleccionado la operación DIVISIÓN';
+            respuestaOperacion = division(num1Valor, num2Valor)
+            modalNumeros.style.display = "block";
+            break;
+        default:
+            mensaje.textContent = `(${operacion}) no existe en la lista, vuelve a intentarlo.`
+    }
+
+    mensaje.textContent = `Resultado de la operación ${operacion}: ${respuestaOperacion}`
+}
+
+function suma(num1, num2) {
+    return num1 + num2;
+}
+
+function resta(num1, num2) {
+    return num1 - num2;
+}
+
+function multiplicacion(num1, num2) {
+    return num1 * num2;
+}
+
+function division(num1, num2) {
+    return num1 / num2;
+}
 
 btnVerificar.addEventListener("click", function () {
     if (funcionEjercicioActual) {
